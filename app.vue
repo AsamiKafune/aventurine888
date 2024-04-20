@@ -1,6 +1,6 @@
 <template>
   <video :class="{ 'flex animate__animated animate__fadeIn': interaction, 'hidden': !interaction }" playsinline loop
-    muted autoplay ref="vid" class="fixed w-full min-h-[calc(100dvh)] object-cover object-center left-0 top-0 z-[-1]">
+    muted autoplay ref="vid" class="fixed w-full min-h-[calc(100dvh)] object-cover object-center left-[50%] top-[50%] transition-all translate-x-[-50%] translate-y-[-50%] z-[-1]">
     <source loop src="https://api-magicdonate.kfn.moe/bg.mp4" type="video/mp4">
   </video>
   <button @click="play()" v-if="!interaction"
@@ -12,14 +12,15 @@
     </div>
   </button>
   <div :class="{ 'flex animate__animated animate__fadeIn': interaction, 'hidden': !interaction }"
-    class="top-0 left-0 fixed z-[10] w-full px-3 text-2xl font-thin">
+    class="top-0 left-0 fixed z-[10] w-full px-3 font-thin">
     <div class="mx-auto w-full max-w-6xl mt-5 flex justify-start text-xl">
-      <div class="flex justify-between bg-white/10 border-2 border-white/5 px-3 py-3 rounded-full gap-3 w-full">
-        <h1>
-          <NuxtLink to="/" class="title">Aventurine888</NuxtLink>
-        </h1>
+      <div class="text-sm sm:text-xl md:text-2xl flex justify-between items-center bg-white/10 border-2 border-white/5 px-3 min-h-[60px] rounded-full gap-3 w-full">
+        <div class="text-xl md:text-2xl mb-0.5 md:mb-1">
+          <NuxtLink class="uppercase " to="/">Aventurine888</NuxtLink>
+        </div>
         <div class="flex gap-3 text-end justify-end">
           <button @click="_alert">โปรโมชั่น</button>
+          <NuxtLink to="https://topup.aona.co.th/p/honkai-star-rail" target="_blank">เติมเงิน</NuxtLink>
           <NuxtLink to="https://hsr.hoyoverse.com/" target="_blank">สมัครสมาชิก</NuxtLink>
         </div>
       </div>
